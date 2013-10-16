@@ -1005,6 +1005,7 @@ void ValueCallback::getMinMaxValues(Player* player, int32_t& min, int32_t& max, 
 
 	ScriptEnvironment* env = m_scriptInterface->getScriptEnv();
 	if (!env->setCallbackId(m_scriptId, m_scriptInterface)) {
+		m_scriptInterface->resetScriptEnv();
 		return;
 	}
 
@@ -1085,6 +1086,7 @@ void TileCallback::onTileCombat(Creature* creature, Tile* tile) const
 
 	ScriptEnvironment* env = m_scriptInterface->getScriptEnv();
 	if (!env->setCallbackId(m_scriptId, m_scriptInterface)) {
+		m_scriptInterface->resetScriptEnv();
 		return;
 	}
 
@@ -1116,6 +1118,7 @@ void TargetCallback::onTargetCombat(Creature* creature, Creature* target) const
 
 	ScriptEnvironment* env = m_scriptInterface->getScriptEnv();
 	if (!env->setCallbackId(m_scriptId, m_scriptInterface)) {
+		m_scriptInterface->resetScriptEnv();
 		return;
 	}
 
